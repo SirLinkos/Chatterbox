@@ -1,0 +1,68 @@
+name: MentionMe
+author: Linkos
+version: 0.1
+main: classes.Main
+
+commands:
+    MentionMe:
+        description: A simple Plugin that mentions you if your name is written in chat.
+        usage: /mentionme
+permissions:
+    mentionme.*:
+        description: Gives access to all mentionme commands
+        default: op
+        children:
+          mentionme.help: true
+          mentionme.color: true
+          mentionme.colorlist: true
+          mentionme.sound: true
+          mentionme.soundlist: true
+          mentionme.playsound: true
+          mentionme.chatcolor: true
+          mentionme.volume: true
+          mentionme.pitch: true
+          mentionme.toggle: true
+    mentionme.user:
+     description: Made for the normal users.
+     default: not op
+     children:
+        mentionme.help: true
+        mentionme.color: true
+        mentionme.colorlist: true
+        mentionme.sound: true
+        mentionme.soundlist: true
+        mentionme.playsound: true
+        mentionme.chatcolor: false
+        mentionme.volume: true
+        mentionme.pitch: true
+        mentionme.toggle: true
+    mentionme.help:
+     description: To display the help page.  
+     default: true
+    mentionme.color:
+     description: Sets own mention color  
+     default: true
+    mentionme.colorlist:
+     description: Displays color list   
+     default: true
+    mentionme.sound:
+     description: Sets own sound
+     default: true
+    mentionme.soundlist:
+     description: Displays sound list
+     default: true
+    mentionme.playsound:
+     description: To test the sounds
+     default: true
+    mentionme.chatcolor:
+     description: Sets the chat color
+     default: op
+    mentionme.volume:
+     description: Sets the own volume
+     default: true
+    mentionme.pitch:
+     description: Sets the own pitch 
+     default: true 
+    mentionme.toggle:
+     description: Turn colored mention on and off
+     default: true                    
