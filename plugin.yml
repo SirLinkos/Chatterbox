@@ -1,6 +1,6 @@
 name: MentionMe
 author: Linkos
-version: 0.1
+version: 0.2
 main: classes.Main
 
 commands:

@@ -35,12 +35,9 @@ implements Listener
 					PlayerInfo.set("Players." + p.getName() + ".sound.pitch", 5);
 					plugin.saveYamls();
 				}
-				if(Cfg.getConfigurationSection("Chat.MessageColor") == null){
-					Cfg.set("Chat.MessageColor", "7");
-					plugin.saveYamls();
-					}
 				if(Cfg.getString("Chat.Transition") == null){
 					Cfg.set("Chat.Transition", ">>");
+					Cfg.set("Chat.MessageColor", "7");
 					plugin.saveYamls();
 				}
 				if(Cfg.getString("Chat.Layout") == null){

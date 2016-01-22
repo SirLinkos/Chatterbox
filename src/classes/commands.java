@@ -25,7 +25,11 @@ public class commands implements CommandExecutor {
 		    FileConfiguration PlayerInfo = this.plugin.PlayerInfo;
 		    FileConfiguration Cfg = this.plugin.Cfg;
 			if(args.length == 0){
-				p.sendMessage(plugin.prefix + ChatColor.GRAY + "/mentionme help");
+				if(p.hasPermission("mentionme.help")){
+					sendhelp(p);
+				}else{
+					p.sendMessage(plugin.noperm);
+				}
 			}
 			else if(args[0].equalsIgnoreCase("Help")){
 				if(p.hasPermission("mentionme.help")){
@@ -51,83 +55,67 @@ public class commands implements CommandExecutor {
 				 if(args.length == 2){
 					 if(args[1].equalsIgnoreCase("Black")){
 						 PlayerInfo.set("Players." + p.getName() + ".color", 0);
-						 p.sendMessage(plugin.prefix + ChatColor.GREEN + "New color set!");
-						 plugin.saveYamls();
+						 colorset(p);
 					 }
 					 else if(args[1].equalsIgnoreCase("DarkBlue")){
 						 PlayerInfo.set("Players." + p.getName() + ".color", 1);
-						 p.sendMessage(plugin.prefix + ChatColor.GREEN + "New color set!");
-						 plugin.saveYamls();
+						 colorset(p);
 					 }
 					 else if(args[1].equalsIgnoreCase("DarkGreen")){
 						 PlayerInfo.set("Players." + p.getName() + ".color", 2);
-						 p.sendMessage(plugin.prefix + ChatColor.GREEN + "New color set!");
-						 plugin.saveYamls();
+						 colorset(p);
 					 }
 					 else if(args[1].equalsIgnoreCase("DarkAqua")){
 						 PlayerInfo.set("Players." + p.getName() + ".color", 3);
-						 p.sendMessage(plugin.prefix + ChatColor.GREEN + "New color set!");
-						 plugin.saveYamls();
+						 colorset(p);
 					 }
 					 else if(args[1].equalsIgnoreCase("DarkRed")){
 						 PlayerInfo.set("Players." + p.getName() + ".color", 4);
-						 p.sendMessage(plugin.prefix + ChatColor.GREEN + "New color set!");
-						 plugin.saveYamls();
+						 colorset(p);
 					 }
 					 else if(args[1].equalsIgnoreCase("Purple")){
 						 PlayerInfo.set("Players." + p.getName() + ".color", 5);
-						 p.sendMessage(plugin.prefix + ChatColor.GREEN + "New color set!");
-						 plugin.saveYamls();
+						 colorset(p);
 					 }
 					 else if(args[1].equalsIgnoreCase("Gold")){
 						 PlayerInfo.set("Players." + p.getName() + ".color", 6);
-						 p.sendMessage(plugin.prefix + ChatColor.GREEN + "New color set!");
-						 plugin.saveYamls();
+						 colorset(p);
 					 }
 					 else if(args[1].equalsIgnoreCase("Gray")){
 						 PlayerInfo.set("Players." + p.getName() + ".color", 7);
-						 p.sendMessage(plugin.prefix + ChatColor.GREEN + "New color set!");
-						 plugin.saveYamls();
+						 colorset(p);
 					 }
 					 else if(args[1].equalsIgnoreCase("DarkGray")){
 						 PlayerInfo.set("Players." + p.getName() + ".color", 8);
-						 p.sendMessage(plugin.prefix + ChatColor.GREEN + "New color set!");
-						 plugin.saveYamls();
+						 colorset(p);
 					 }
 					 else if(args[1].equalsIgnoreCase("Blue")){
 						 PlayerInfo.set("Players." + p.getName() + ".color", 9);
-						 p.sendMessage(plugin.prefix + ChatColor.GREEN + "New color set!");
-						 plugin.saveYamls();
+						 colorset(p);
 					 }
 					 else if(args[1].equalsIgnoreCase("Green")){
 						 PlayerInfo.set("Players." + p.getName() + ".color", "a");
-						 p.sendMessage(plugin.prefix + ChatColor.GREEN + "New color set!");
-						 plugin.saveYamls();
+						 colorset(p);
 					 }
 					 else if(args[1].equalsIgnoreCase("Aqua")){
 						 PlayerInfo.set("Players." + p.getName() + ".color", "b");
-						 p.sendMessage(plugin.prefix + ChatColor.GREEN + "New color set!");
-						 plugin.saveYamls();
+						 colorset(p);
 					 }
 					 else if(args[1].equalsIgnoreCase("Red")){
 						 PlayerInfo.set("Players." + p.getName() + ".color", "c");
-						 p.sendMessage(plugin.prefix + ChatColor.GREEN + "New color set!");
-						 plugin.saveYamls();
+						 colorset(p);
 					 }
 					 else if(args[1].equalsIgnoreCase("Pink")){
 						 PlayerInfo.set("Players." + p.getName() + ".color", "d");
-						 p.sendMessage(plugin.prefix + ChatColor.GREEN + "New color set!");
-						 plugin.saveYamls();
+						 colorset(p);
 					 }
 					 else if(args[1].equalsIgnoreCase("Yellow")){
 						 PlayerInfo.set("Players." + p.getName() + ".color", "e");
-						 p.sendMessage(plugin.prefix + ChatColor.GREEN + "New color set!");
-						 plugin.saveYamls();
+						 colorset(p);
 					 }
 					 else if(args[1].equalsIgnoreCase("White")){
 						 PlayerInfo.set("Players." + p.getName() + ".color", "f");
-						 p.sendMessage(plugin.prefix + ChatColor.GREEN + "New color set!");
-						 plugin.saveYamls();
+						 colorset(p);
 					 }else{
 						 p.sendMessage(plugin.prefix + ChatColor.RED + "Unknown color!");
 					 }
@@ -156,43 +144,35 @@ public class commands implements CommandExecutor {
 				if(args.length == 2){
 					if(args[1].equalsIgnoreCase("piano")){
 						 PlayerInfo.set("Players." + p.getName() + ".sound.tone", "PIANO");
-						 p.sendMessage(plugin.prefix + ChatColor.GREEN + "New sound set!");
-						 plugin.saveYamls();
+						 soundset(p);
 					}
 					else if(args[1].equalsIgnoreCase("click")){
 						 PlayerInfo.set("Players." + p.getName() + ".sound.tone", "CLICK");
-						 p.sendMessage(plugin.prefix + ChatColor.GREEN + "New sound set!");
-						 plugin.saveYamls();
+						 soundset(p);
 					}
 					else if(args[1].equalsIgnoreCase("firework")){
 						 PlayerInfo.set("Players." + p.getName() + ".sound.tone", "FIREWORK");
-						 p.sendMessage(plugin.prefix + ChatColor.GREEN + "New sound set!");
-						 plugin.saveYamls();
+						 soundset(p);
 					}
 					else if(args[1].equalsIgnoreCase("arrow")){
 						 PlayerInfo.set("Players." + p.getName() + ".sound.tone", "ARROW_HIT");
-						 p.sendMessage(plugin.prefix + ChatColor.GREEN + "New sound set!");
-						 plugin.saveYamls();
+						 soundset(p);
 					}
 					else if(args[1].equalsIgnoreCase("anvil")){
 						 PlayerInfo.set("Players." + p.getName() + ".sound.tone", "ANVIL");
-						 p.sendMessage(plugin.prefix + ChatColor.GREEN + "New sound set!");
-						 plugin.saveYamls();
+						 soundset(p);
 					}
 					else if(args[1].equalsIgnoreCase("thunder")){
 						 PlayerInfo.set("Players." + p.getName() + ".sound.tone", "THUNDER");
-						 p.sendMessage(plugin.prefix + ChatColor.GREEN + "New sound set!");
-						 plugin.saveYamls();
+						 soundset(p);
 					}
 					else if(args[1].equalsIgnoreCase("cat")){
 						 PlayerInfo.set("Players." + p.getName() + ".sound.tone", "CAT");
-						 p.sendMessage(plugin.prefix + ChatColor.GREEN + "New sound set!");
-						 plugin.saveYamls();
+						 soundset(p);
 					}
 					else if(args[1].equalsIgnoreCase("bass")){
 						 PlayerInfo.set("Players." + p.getName() + ".sound.tone", "BASS");
-						 p.sendMessage(plugin.prefix + ChatColor.GREEN + "New sound set!");
-						 plugin.saveYamls();
+						 soundset(p);
 					}
 					else{
 						p.sendMessage(plugin.prefix + ChatColor.RED + "Unknown sound!");
@@ -273,83 +253,67 @@ public class commands implements CommandExecutor {
 				 if(args.length == 2){
 					 if(args[1].equalsIgnoreCase("Black")){
 						 Cfg.set("Chat.MessageColor", 0);
-						 p.sendMessage(plugin.prefix + ChatColor.GREEN + "New chatcolor set!");
-						 plugin.saveYamls();
+						 chatcolorset(p);
 					 }
 					 else if(args[1].equalsIgnoreCase("DarkBlue")){
 						 Cfg.set("Chat.MessageColor", 1);
-						 p.sendMessage(plugin.prefix + ChatColor.GREEN + "New chatcolor set!");
-						 plugin.saveYamls();
+						 chatcolorset(p);
 					 }
 					 else if(args[1].equalsIgnoreCase("DarkGreen")){
 						 Cfg.set("Chat.MessageColor", 2);
-						 p.sendMessage(plugin.prefix + ChatColor.GREEN + "New chatcolor set!");
-						 plugin.saveYamls();
+						 chatcolorset(p);
 					 }
 					 else if(args[1].equalsIgnoreCase("DarkAqua")){
 						 Cfg.set("Chat.MessageColor", 3);
-						 p.sendMessage(plugin.prefix + ChatColor.GREEN + "New chatcolor set!");
-						 plugin.saveYamls();
+						 chatcolorset(p);
 					 }
 					 else if(args[1].equalsIgnoreCase("DarkRed")){
 						 Cfg.set("Chat.MessageColor", 4);
-						 p.sendMessage(plugin.prefix + ChatColor.GREEN + "New chatcolor set!");
-						 plugin.saveYamls();
+						 chatcolorset(p);
 					 }
 					 else if(args[1].equalsIgnoreCase("Purple")){
 						 Cfg.set("Chat.MessageColor", 5);
-						 p.sendMessage(plugin.prefix + ChatColor.GREEN + "New chatcolor set!");
-						 plugin.saveYamls();
+						 chatcolorset(p);
 					 }
 					 else if(args[1].equalsIgnoreCase("Gold")){
 						 Cfg.set("Chat.MessageColor", 6);
-						 p.sendMessage(plugin.prefix + ChatColor.GREEN + "New chatcolor set!");
-						 plugin.saveYamls();
+						 chatcolorset(p);
 					 }
 					 else if(args[1].equalsIgnoreCase("Gray")){
 						 Cfg.set("Chat.MessageColor", 7);
-						 p.sendMessage(plugin.prefix + ChatColor.GREEN + "New chatcolor set!");
-						 plugin.saveYamls();
+						 chatcolorset(p);
 					 }
 					 else if(args[1].equalsIgnoreCase("DarkGray")){
 						 Cfg.set("Chat.MessageColor", 8);
-						 p.sendMessage(plugin.prefix + ChatColor.GREEN + "New chatcolor set!");
-						 plugin.saveYamls();
+						 chatcolorset(p);
 					 }
 					 else if(args[1].equalsIgnoreCase("Blue")){
 						 Cfg.set("Chat.MessageColor", 9);
-						 p.sendMessage(plugin.prefix + ChatColor.GREEN + "New chatcolor set!");
-						 plugin.saveYamls();
+						 chatcolorset(p);
 					 }
 					 else if(args[1].equalsIgnoreCase("Green")){
 						 Cfg.set("Chat.MessageColor", "a");
-						 p.sendMessage(plugin.prefix + ChatColor.GREEN + "New chatcolor set!");
-						 plugin.saveYamls();
+						 chatcolorset(p);
 					 }
 					 else if(args[1].equalsIgnoreCase("Aqua")){
 						 Cfg.set("Chat.MessageColor", "b");
-						 p.sendMessage(plugin.prefix + ChatColor.GREEN + "New chatcolor set!");
-						 plugin.saveYamls();
+						 chatcolorset(p);
 					 }
 					 else if(args[1].equalsIgnoreCase("Red")){
 						 Cfg.set("Chat.MessageColor", "c");
-						 p.sendMessage(plugin.prefix + ChatColor.GREEN + "New chatcolor set!");
-						 plugin.saveYamls();
+						 chatcolorset(p);
 					 }
 					 else if(args[1].equalsIgnoreCase("Pink")){
 						 Cfg.set("Chat.MessageColor", "d");
-						 p.sendMessage(plugin.prefix + ChatColor.GREEN + "New chatcolor set!");
-						 plugin.saveYamls();
+						 chatcolorset(p);
 					 }
 					 else if(args[1].equalsIgnoreCase("Yellow")){
 						 Cfg.set("Chat.MessageColor", "e");
-						 p.sendMessage(plugin.prefix + ChatColor.GREEN + "New chatcolor set!");
-						 plugin.saveYamls();
+						 chatcolorset(p);
 					 }
 					 else if(args[1].equalsIgnoreCase("White")){
 						 Cfg.set("Chat.MessageColor", "f");
-						 p.sendMessage(plugin.prefix + ChatColor.GREEN + "New chatcolor set!");
-						 plugin.saveYamls();
+						 chatcolorset(p);
 					 }else{
 						 p.sendMessage(plugin.prefix + ChatColor.RED + "Unknown color!");
 					 }
@@ -413,29 +377,47 @@ public class commands implements CommandExecutor {
 		return true;
 	}
 public void sendhelp(Player p){
+	ChatColor CCDG = ChatColor.DARK_GREEN;
+	ChatColor CCG = ChatColor.GRAY;
 	if(p.hasPermission("mentionme.chatcolor")){
+
 	p.sendMessage(plugin.prefix + ChatColor.DARK_AQUA + " - Help - ");
-	p.sendMessage(plugin.prefix + ChatColor.DARK_GREEN + "/mentionme color <color> - Sets the mention to the desired color.");
-	p.sendMessage(plugin.prefix + ChatColor.DARK_GREEN + "/mentionme colorlist - Displays all available colors.");
-	p.sendMessage(plugin.prefix + ChatColor.DARK_GREEN + "/mentionme sound <sound> - Changes the mention tone.");
-	p.sendMessage(plugin.prefix + ChatColor.DARK_GREEN + "/mentionme soundlist - Displays all available tones.");
-	p.sendMessage(plugin.prefix + ChatColor.DARK_GREEN + "/mentionme playsound <sound> - To test the sounds.");
-	p.sendMessage(plugin.prefix + ChatColor.DARK_GREEN + "/mentionme chatcolor <color> - Sets the chat color.");
-	p.sendMessage(plugin.prefix + ChatColor.DARK_GREEN + "/mentionme volume <volume> - Changes your mention volume.");
-	p.sendMessage(plugin.prefix + ChatColor.DARK_GREEN + "/mentionme pitch <color> - Sets your mention pitch.");
-	p.sendMessage(plugin.prefix + ChatColor.DARK_GREEN + "/mentionme toggle - Turns colored mentions on and off.");
+	p.sendMessage(plugin.prefix + CCDG + "/mentionme color" + CCG + " <color>" + CCDG +" - "+ CCG +"Sets the mention to the desired color.");
+	p.sendMessage(plugin.prefix + CCDG + "/mentionme colorlist -" + CCG +" Displays all available colors.");
+	p.sendMessage(plugin.prefix + CCDG + "/mentionme sound"+ CCG +" <sound>"+ CCDG +" - "+ CCG +"Changes the mention tone.");
+	p.sendMessage(plugin.prefix + CCDG + "/mentionme soundlist -"+CCG+" Displays all available tones.");
+	p.sendMessage(plugin.prefix + CCDG + "/mentionme playsound"+CCG+" <sound>"+CCDG+" -"+CCG+" To test the sounds.");
+	p.sendMessage(plugin.prefix + CCDG + "/mentionme chatcolor"+CCG+" <color> "+CCDG+"-"+CCG+" Sets the chat color.");
+	p.sendMessage(plugin.prefix + CCDG + "/mentionme volume"+CCG+" <volume> - "+CCDG+"Changes your mention volume.");
+	p.sendMessage(plugin.prefix + CCDG + "/mentionme pitch "+CCG+"<color> -"+CCDG+" Sets your mention pitch.");
+	p.sendMessage(plugin.prefix + CCDG + "/mentionme toggle - "+CCG+"Turns colored mentions on and off.");
 	}else{
 		p.sendMessage(plugin.prefix + ChatColor.DARK_AQUA + " - Help - ");
-		p.sendMessage(plugin.prefix + ChatColor.DARK_GREEN + "/mentionme color <color> - Sets the mention to the desired color.");
-		p.sendMessage(plugin.prefix + ChatColor.DARK_GREEN + "/mentionme colorlist - Displays all available colors.");
-		p.sendMessage(plugin.prefix + ChatColor.DARK_GREEN + "/mentionme sound <sound> - Changes the mention tone.");
-		p.sendMessage(plugin.prefix + ChatColor.DARK_GREEN + "/mentionme soundlist - Displays all available tones.");
-		p.sendMessage(plugin.prefix + ChatColor.DARK_GREEN + "/mentionme playsound <sound> - To test the sounds.");
-		p.sendMessage(plugin.prefix + ChatColor.DARK_GREEN + "/mentionme volume <volume> - Changes your mention volume.");
-		p.sendMessage(plugin.prefix + ChatColor.DARK_GREEN + "/mentionme pitch <pitch> - Sets your mention pitch.");
-		p.sendMessage(plugin.prefix + ChatColor.DARK_GREEN + "/mentionme toggle - Turns colored mentions on and off.");
+		p.sendMessage(plugin.prefix + CCDG + "/mentionme color"+CCG+" <color>"+CCDG+" -"+CCG+" Sets the mention to the desired color.");
+		p.sendMessage(plugin.prefix + CCDG + "/mentionme colorlist -"+CCG+" Displays all available colors.");
+		p.sendMessage(plugin.prefix + CCDG + "/mentionme sound"+CCG+" <sound>"+CCDG+" - "+CCG+"Changes the mention tone.");
+		p.sendMessage(plugin.prefix + CCDG + "/mentionme soundlist -"+CCG+" Displays all available tones.");
+		p.sendMessage(plugin.prefix + CCDG + "/mentionme playsound"+CCG+" <sound>"+CCDG+" -"+CCG+" To test the sounds.");
+		p.sendMessage(plugin.prefix + CCDG + "/mentionme volume"+CCG+" <volume>"+CCDG+" -"+CCG+" Changes your mention volume.");
+		p.sendMessage(plugin.prefix + CCDG + "/mentionme pitch"+CCG+" <pitch>"+CCDG+" - "+CCG+"Sets your mention pitch.");
+		p.sendMessage(plugin.prefix + CCDG + "/mentionme toggle - "+CCG+"Turns colored mentions on and off.");
 	}
 	
+}
+public void colorset(Player p){
+	 p.sendMessage(plugin.prefix + ChatColor.GREEN + "New color set!");
+	 plugin.saveYamls();
+	 plugin.loadYamls();
+}
+public void soundset(Player p){
+	p.sendMessage(plugin.prefix + ChatColor.GREEN + "New sound set!");
+	 plugin.saveYamls();
+	 plugin.loadYamls();
+}
+public void chatcolorset(Player p){
+	p.sendMessage(plugin.prefix + ChatColor.GREEN + "New chatcolor set!");
+	 plugin.saveYamls();
+	 plugin.loadYamls();
 }
 	
 }
