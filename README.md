@@ -14,5 +14,5 @@ Everything can be changes via ingame-commands or in the files.
 
 
 #### To-Do:
-- Add more sounds 
-- Add a friend system
+- Add more sounds ( You can suggest sounds you want to have )
+- Add a friend system (WIP)
