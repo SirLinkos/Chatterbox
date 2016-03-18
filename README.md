@@ -1,5 +1,5 @@
-# MentionMe
-is a Bukkit/ Spigot plugin for chat mentions. It highlights names of online players in the chat and if you are mentioned a sound will be played. 
+# Chatterbox
+is a Bukkit/ Spigot plugin for chat mentions and much more. It highlights names of online players in the chat and if you are mentioned a sound will be played. 
 Moreover it also changes the overall look of the chat and can use prefixes and suffixes via Vault.
 
 #### Features:
